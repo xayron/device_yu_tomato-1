@@ -85,6 +85,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc \
+    init.qti.ims.sh \
     set_baseband.sh
 
 # Keylayout
