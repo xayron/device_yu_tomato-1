@@ -102,6 +102,16 @@ TARGET_RECOVERY_DENSITY := xhdpi
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
+# Shims
+TARGET_LD_SHIM_LIBS += \
+    /system/vendor/lib64/lib-imsdpl.so|libshims_boringssl.so \
+    /system/vendor/lib64/lib-imscamera.so|vendor.qti.imsrtpservice@1.0.so \
+    /system/vendor/lib64/lib-imsvt.so|libshims_ims.so \
+    /system/vendor/lib64/lib-imsvtutils.so|lib-imsvideocodec \
+    /system/vendor/lib64/lib-imsvtextutils/com.qualcomm.qti.imscmservice@1.0.so \
+
+TARGET_QCOM_WLAN_VARIANT := wlan-caf
+
 
 # Inherit from proprietary files
 include vendor/yu/tomato/BoardConfigVendor.mk
